@@ -1,0 +1,1247 @@
+/* PC スマホ共通スタイル */
+body {
+  font-family: "Source Sans Pro", "Hiragino Kaku Gothic ProN", Meiryo, Arial, sans-serif;
+}
+
+p {
+  font-size: 15px;
+}
+
+/*=====================
+ PC用のスタイル 
+ ===============*/
+ /* メディアクエリ　ブレークポイントは768px（iPadの幅） 
+  今迄作ったPC用のcssを全部含める　*/
+ @media screen and (min-width: 768px) {
+
+ 
+ /* 横幅設定 */
+
+ body {
+  max-width: 1080px;
+  min-width: 960px;
+  margin: 0 auto;
+ }
+
+ /* ヘッダー */
+ header {
+  display: flex;
+  justify-content: space-between;
+ }
+
+ /* ナビゲーションのレイアウト */
+ #nav-pc {
+  text-align: right;
+  font-size: 14px;
+  padding-top: 15px;
+ }
+ /* ナビゲーションのリンクの装飾設定 
+  idセレクタ＞セレクタ要素（a)　で、#nav-pcの子要素のaのみに適用される設定となる　*/
+ #nav-pc > a {
+  text-decoration: none;
+  margin-left: 20px;
+
+ }
+
+ #nav-pc > a:link{
+  color: #0d0d0d;
+ }
+
+ #nav-pc > a:visited {
+  color: #0d0d0d;
+ }
+
+ #nav-pc > a:hover {
+  color: #0d0d0d;
+  text-decoration: underline;
+ }
+
+ #nav-pc > a:active {
+  color: #0d0d0d;
+ }
+
+/* スマホ用メニューボタン（ハンバーガー）とナビメニューを非表示にする 対象idはnav-spとmenu-sp両方 */
+#nav-sp,
+#menu-sp  {
+  display: none;
+}
+
+ /* メインビジュアルセクション */
+ #main-visual {
+  position: relative;
+  height: 400px;
+ }
+
+ /* メインメッセージの青色部分と文言 */
+ #main-message {
+  position: absolute ;
+  top: 0px;
+  left: 0px;
+  background-color: #2710d5;
+  color: #ffffff;
+  border-radius: 0 0 476px 0;
+  height: 100%;
+  width: 100%;
+  max-width: 620px;
+  z-index: 11;
+ }
+
+ #main-message > h1 {
+  font-size: 60px;
+  font-weight: bold;
+  margin: 100px 0 0 50px ;
+ }
+
+ #main-message > p {
+  font-size: 28px;
+  margin: 0 0 0 50px;
+ }
+
+ #main-visual > img {
+  max-width: 620px;
+  border-radius: 476px 0 0 0 ;
+  position:absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+ }
+
+ /* メインビジュアルの青背景と右側写真の高さの差が約40pxなので、h2の上マージンを40pxとっている */
+ h2 {
+  margin: 40px 0 0 0;
+ }
+
+ /* h2::after という指定をすることで、h2のあとにurlで指定した画像を付け加えて表示することができる */
+ h2::after {
+  content: url("images/line.png");
+  margin-left: 10px;
+ }
+
+ h3 {
+  font-size: 27px;
+ }
+
+ /* ミッションセクション全体の指定 */
+ #mission {
+  /* 要素を中央寄せにする */
+  margin: 0 auto;
+  /* 親要素（＝article要素。ヘッダーの下のメイン部分）の幅いっぱいに広げる */
+  width: 100%;
+ }
+
+/* ミッションセクション内のFLEX BOXのdiv 　その子要素であるふたつのdivを
+  「flex」と指定して、横並びにする
+  　（コンテナであるFlexBoxのdivにdisplay：flexと指定することで、子要素にflexboxが有効になる）*/
+#mission-flex {
+  width: 100%;
+  display: flex;
+
+}
+/* flexbox内のふたつのdiv共通の設定 */
+#mission-flex > div {
+  width: 50%;
+  margin: 20px;
+}
+
+/* 左側divの設定 */
+#mission-photo {
+  width: 100%;
+}
+
+/* 右側divの設定 */
+#s2dgs {
+  margin-top: 50px;
+}
+
+/* productセクション部分 */
+#product {
+  background-color: #fafafa;
+  width: 100%;
+  margin: 80px 0;
+  padding: 10px 40px 0 40px;
+}
+/* 4つのコンテンツをグループ化するdivのスタイル指定 */
+#product > div {
+  margin-top: 40px;
+  display: flex;
+}
+
+/* 左右のカラム */
+#product-left {
+  width: 50%;
+  margin-right:20px;
+}
+#product-right {
+  width: 50%;
+  margin-top: 80px;
+  margin-left: 20px;
+}
+/* １つのコンテンツをグループ化するdivのスタイル指定 */
+#product-left > div {
+  position: relative;
+  height: 480px;
+  margin-right: 20px;
+}
+#product-right > div{
+  position: relative;
+  height: 480px;
+  margin-left: 20px;
+}
+.product-photo {
+  width: 100%;
+}
+/* 見出しと説明文をグループ化するdivのスタイル設定 */
+.product-explain {
+  background-color: #ffffff;
+  position: absolute;
+  top: 280px;
+  left: 0;
+  margin: 0 40px;
+  padding: 20px;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.05);
+
+}
+
+.product-explain > span {
+  color: #2710d5;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0;
+}
+
+.product-explain > h3 {
+  margin: 5px 0;
+}
+
+.product-explain > p {
+  margin: 0;
+}
+
+#product-more {
+  margin-bottom: -42px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#aboutus {
+  margin: 80px auto;
+}
+
+/* ３つの組織文化と画像を入れる枠のdiv */
+#aboutus > div {
+  display:flex;
+}
+.culture-img {
+  width: 100%;
+  align-self: flex-start;
+  /* ↑画像をフレックスボックスの上揃えにするための記述↑ */
+}
+.culture-img2 {
+  margin-top: 50px;
+  width: 100%;
+}
+/* 組織文化の表 */
+.culture-table {
+  max-width: 500px;
+  margin-right: 50px;
+}
+.culture-num {
+  font-size: 80px;
+  color: #2710d5;
+  margin-right: 20px;
+}
+.culture-en {
+  color: #2710d5;
+  font-weight: bold;
+  font-size: 24px;
+  display: block;
+}
+.culture-jp {
+  font-size: 28px;
+  font-weight: bold;
+}
+.culture-description {
+  margin: 0;
+}
+/* VISIONセクション */
+#vision {
+  margin: 80px auto;
+}
+
+/* ７つのVISIONを納めるコンテナdiv */
+#vision > div {
+  width: 100%;
+  display: flex;
+  justify-content :space-between;
+  flex-wrap: wrap;
+}
+
+/* 各Visionのdiv */
+.vision-box {
+  width: 300px;
+  height: 300px;
+  margin-bottom: 30px;
+  position:relative;
+}
+
+.vision-box > img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 30;
+}
+
+.vision-box > span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 31;
+  margin-right: 20px;
+}
+
+.vision-box > span > h4 {
+  color: #2710d5;
+  font-size: 19px;
+  margin-top: 80px;
+}
+.vision-box > span > h4::first-letter {
+  font-size: 40px;
+}
+
+.vision-box > span > h5 {
+  font-size: 20px;
+  margin: 0;
+}
+.vision-box > span > p {
+  margin-top: 10px;
+}
+/* COMPANYセクション */
+#company {
+  margin: 80px auto;
+}
+/* companyの表部分 */
+.company-table {
+  width: 100%;
+}
+/* 二行目以降の見出し */
+.tableheader {
+  text-align: left;
+  padding: 20px;
+  /* 下の罫線だけ表示 */
+  border-bottom-color: #2710d5;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  width: 100px;
+}
+/* 一行目の見出し（上の罫線も表示） */
+.tableheader-first {
+  text-align: left;
+  padding: 20px;
+  border-bottom-color: #2710d5;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  width: 100px;
+  border-top-color: #2710d5;
+  border-top-width: 1px;
+  border-top-style: solid;
+}
+
+.cell {
+  padding: 30px;
+  border-bottom-color: #ececec;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+.cell-first {
+  padding: 30px;
+  border-bottom-color: #ececec;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-top-color: #ececec;
+  border-top-width: 1px;
+  border-top-style: solid;
+}
+
+#company > iframe {
+  width: 100%;
+  height: 368px;
+  margin: 40px 0 0 0;
+}
+/* お問い合わせセクション */
+#contact {
+  margin: 80px auto;
+}
+/* 問いとこたえセット部分 */
+#contact > form > div{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-bottom: 30px;
+} 
+/* 問いのdiv */
+.contact-heading {
+  width: 240px;
+  align-self: center;
+}
+/* 問いの項目名の設定 */
+.contact-label {
+  font-weight: bold;
+}
+/* 「必須」の文字 */
+.contact-span {
+  color: #ce2222;
+  margin-left: 20px;
+  font-weight: bold;
+
+}
+/* 1行インプット部分（テキストボックス）の設定 下の枠線のみ表示*/
+.contact-textbox {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom-width: 1px;
+  border-bottom-color: #707070;
+  border-bottom-style: solid;
+  background-color: #fafafa;
+  width: 400px;
+  height: 56px;
+}
+/* 複数行入力できるテキストエリアの設定 */
+.contact-textarea {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom-width: 1px;
+  border-bottom-color: #787878;
+  border-bottom-style: solid;
+  background-color: #fafafa;
+  width: 400px;
+  height: 200px;
+}
+
+/* 個人情報について　detail要素の設定 */
+details {
+  width: 700px;
+}
+details > div {
+  background-color: #fafafa;
+  padding: 20px;
+}
+details > div > span {
+  font-weight: bold;
+}
+/* フッター */
+footer {
+  background-color: #0d0d0d;
+  text-align: center;
+  padding: 80px 80px 30px 80px;
+}
+#footer-logo {
+ margin-bottom: 30px;
+}
+#footer-link {
+  margin-bottom: 50px;
+}
+#footer-link > a {
+  text-decoration: none;
+  margin: 10px;
+}
+#footer-link > a:link {
+  color: #ffffff;
+}
+#footer-link > a:visited {
+  color: #ffffff;
+}
+
+#footer-link > a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+#footer-link > a:active {
+  color: #ffffff
+}
+#sns-footer{
+  text-align: left;
+  width: 100%;
+}
+
+#sns-footer > a {
+  margin-right: 30px;
+}
+
+#copyright {
+  color: #ffffff;
+  float: right;
+}
+
+/* mission.html用のスタイル（PC） */
+/* ミッションのメインビジュアル */
+#mission-main {
+  height: 496px;
+  width: 100%;
+  background-image: url("images/mission/mission-main.png");
+  background-repeat: no-repeat;
+  background-position-y: center;
+}
+#mission-title {
+  background-color: #2710d5;
+  width: 368px;
+  color: #ffffff;
+  height: 496px;
+  border-radius: 0 248px 248px 0 ;
+  position: relative;
+}
+#mission-title > h1 {
+  position:absolute;
+  /* font-sizeが80pxなので、ｔｏｐが０でも、自動的に文字の上にもmargin＝80pxが生じる模様・・ */
+  top: 0;
+  left: 100px;
+  font-size: 80px;
+}
+#mission-title > span {
+  position: absolute;
+  top: 200px;
+  left: 100px;
+  font-size: 26px;
+}
+#mission-title > div {
+  position: absolute;
+  top: 350px;
+  left: 100px;
+  font-size: 16px;
+}
+
+#mission-s2dgs {
+  width: 100%;
+  margin: 20px;
+}
+
+.mission-h2 {
+  color:#2710d5;
+  font-size: 40px;
+}
+.mission-h2::after {
+  content: none;
+}
+#mission-5goals {
+  margin: 20px;
+  display:flex;
+}
+#mission-5goals > div {
+  /* 親要素の幅いっぱいまで引き延ばす */
+  flex-grow: 1;
+  padding: 20px;
+}
+#mission-5goals > div > div {
+  margin-bottom: 40px;
+}
+.fivegoals-image-right {
+  float: right;
+  margin: 20px;
+}
+.fivegoals-image-left {
+  float: left;
+  margin: 20px;
+}
+.fivegoals-number {
+  color:#2710d5;
+  font-size: 40px;
+  margin: 0;
+}
+.fivegoals-h3 {
+  font-size: 28px;
+  margin: 0;
+}
+.fivegoals-p {
+  margin: 0;
+}
+
+/* プロダクトページの設定（ＰＣ） */
+
+#product-main {
+  height: 496px;
+  width: 100%;
+  background-image: url("images/product/product-main.png");
+  background-repeat: no-repeat;
+  background-position-y: center;
+}
+#product-title {
+  background-color: #2710d5;
+  width: 368px;
+  color: #ffffff;
+  height: 496px;
+  border-radius: 0 248px 248px 0 ;
+  position: relative;
+}
+#product-title > h1 {
+  position:absolute;
+  /* font-sizeが80pxなので、ｔｏｐが０でも、自動的に文字の上にもmargin＝80pxが生じる模様・・ */
+  top: 0;
+  left: 100px;
+  font-size: 80px;
+}
+#product-title > span {
+  position: absolute;
+  top: 200px;
+  left: 100px;
+  font-size: 26px;
+}
+#product-title > div {
+  position: absolute;
+  top: 350px;
+  left: 100px;
+  font-size: 16px;
+}
+.product-section1 {
+  position: relative;
+  margin: 20px;
+  height: 340px;
+}
+.product-section1 > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 450px;
+  margin: 0 40px 30px 0;
+  border-radius: 0 432px 0 0 ;
+}
+.product-section1 > div {
+  position: absolute;
+  top: 0;
+  left: 480px;
+}
+
+.product-section2 {
+  position: relative;
+  margin: 20px;
+  height: 340px;
+}
+.product-section2 > img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 450px;
+  margin: 0  0 30px 40px ;
+  border-radius: 432px 0 0 0;
+}
+.product-section2 > div{
+  width: 500px;
+  position:absolute;
+  top:0;
+  left:0;
+}
+.product-h2 {
+  color: #2710d5;
+  font-size: 24px;
+  margin: 0;
+}
+.product-h3 {
+  font-size: 28px;
+  margin: 0;
+}
+}
+
+
+/* ここまでずっとメディアクエリによって768px以上の場合として設定したPC用のスタイル */
+
+
+/* ==============
+スマートフォン用のスタイル
+============== */
+@media screen and (max-width: 767px) {
+
+  /* 横幅設定 */
+  body {
+    min-width: 375px;
+    margin: 0;
+  }
+  /* PC用ナビゲーションメニューを非表示にする */
+  #nav-pc{
+    display: none;
+  }
+
+  /* スマホ用メニューボタン（ハンバーガー）とナビメニューはPC用とは別途作成する */
+
+  /* ハンバーガー画像をスマホ画面の右上に配置する */
+  #menu-sp {
+    float: right;
+    padding: 0;
+  }
+  /* スマホ用ナビゲーションメニュー 初期状態は非表示*/
+  #nav-sp {
+    background-color: #2710d5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 100;
+  }
+  /* スマホメニューの中の閉じるボタン（バツ印） */
+  #close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  /* スマホメニューの中のロゴ画像（トップに戻るリンク） */
+  #logo-sp {
+    margin: 80px 0 30px 20px;
+    
+  }
+
+  /* スマホメニュー#nav-spの背景やa要素の設定 */
+  #nav-sp > a{
+    display: block;
+  }
+
+  #nav-sp > a:link{
+    color: #ffffff;
+  }
+  #nav-sp > a:visited {
+    color: #ffffff;
+  }
+  #nav-sp > a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+  #nav-sp > a:active {
+    color: #ffffff;
+  }
+  /* スマホメニューの各項目 */
+  #nav-sp > .menu {
+    text-decoration: none;
+    display: block;
+    margin: 0 20px 0 20px;
+    height: 44px;
+    font-size: 16px;
+    background-image: url("images/arrow.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+
+  }
+  #sns {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+  }
+  #sns > a {
+    margin-right: 30px;
+  }
+
+  /* スマホ表示時のメインビジュアルセクションの設定。スマホ幅に対応*/
+  #main-visual {
+    position: relative;
+    height: 470px;
+    width: 100%;
+    overflow: hidden;
+  }
+  /* 青部分 　#main.message　で設定しても大丈夫*/
+  #main-visual > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #2710d5;
+    color: white;
+    border-radius: 0 0 476px 0;
+    text-align: center;
+    height: 280px;
+    width: 100%;
+    z-index: 11;
+
+  }
+
+  #main-visual > div > h1 {
+    font-size: 28px;
+    margin: 90px 0 0 0;
+  }
+  #main-visual > div > p {
+    margin: 0;
+  }
+  #main-visual > img {
+    width: 100%;
+    border-radius: 476px 0 0 0;
+    z-index: 10;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  /* 見出し */
+  h2::after {
+    content: url("images/line.png");
+    margin-left: 10px;
+  }
+  h3 {
+    font-size: 24px;
+    margin-top: 10px;
+  }
+  /* ミッションセクションのスマホ用表示 */
+  #mission {
+    margin: 20px;
+  }
+
+  #mission-photo {
+    width: 100%;
+  }
+  #s2dgs {
+    width: 100%;
+  }
+  /* プロダクト　PC画面では横並び2列の画像(id=product-left とproduct-right）を、スマホでは1列縦並びに。 */
+  #product {
+    background-color: #fafafa;
+    padding-top: 10px;
+  }
+  #product h2 {
+    margin-left: 20px;
+  }
+
+  /* 左右のカラム（スマホで縦並びにする部分） */
+  #product-left,
+  #product-right {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  
+  /* 画像＋説明の枠*/
+  #product-left > div,
+  #product-right > div {
+    position: relative;
+    height: 540px;
+
+  }
+/* product　説明文の枠 （白の四角）*/
+  .product-explain {
+    background-color: #ffffff;
+    position: absolute;
+    left: 0;
+    bottom: 50px;
+    padding: 20px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.05);
+
+  }
+  /* productの画像と「もっと見る」部分の画像をスマホ幅にあわせる */
+  .product-photo {
+    width: 100%;
+  }
+
+  #product-more > img {
+    margin: 0 0 -42px 20px;
+  }
+  /* ABOUT USのスマホ設定 */
+  #aboutus {
+    margin: 80px 20px;
+  }
+
+  /* ABOUT US の表部分とPCでは右側に表示している画像を、スマホでは縦並びにする　写真が上 */
+  #aboutus > div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .culture-table {
+    width: 100%;
+    padding-right: 20px;
+    order: 2;
+  }
+  .culture-img {
+    width: 100%;
+    order: 1;
+  }
+  .culture-img2 {
+    width: 100%;
+  }
+  .culture-num {
+    font-size: 80px;
+    color: #2710d5;
+  }
+  .culture-en {
+    color: #2710d5;
+    font-weight: bold;
+    font-size: 24px;
+    display: block;
+  }
+  .culture-jp {
+    display: block;
+  }
+  .culture-description {
+    margin: 0;
+  }
+
+  /* VISION　スマホ画面では各VISIONの箱を縦一列に */
+  #vision{
+    margin: 80px 20px;
+  }
+
+  .vision-box {
+    width:  300px;
+    height: 300px;
+    margin-bottom: 30px;
+    position: relative;
+  }
+
+  /* visionの枠線イメージをvisionひとつひとつの箱の左上にそろえる */
+  .vision-box > img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 30;
+  }
+  .vision-box > span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-right: 20px;
+    z-index: 31;
+  }
+  .vision-box > span > h4 {
+    color: #2710d5;
+    font-size: 19px;
+    margin-top: 60px;
+  }
+  .vision-box > span > h5 {
+    font-size: 20px;
+    margin: 0;
+  }
+  .vision-box > span > p {
+    margin-top: 10px;
+  }
+  /* company部分のスマホ表示 */
+
+  #company {
+    margin: 0 20px;
+  }
+  
+  #company > h3 {
+    margin-bottom: 20px;
+  }
+
+  #company > table {
+    width: 100%;
+  }
+  .tableheader-first {
+    text-align: left;
+    padding: 20px;
+    border-bottom-color: #2710d5;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-top-color: #2710d5;
+    border-top-width: 1px;
+    border-top-style: solid;
+    width:  50px;
+  }
+  .tableheader {
+    text-align: left;
+    padding: 20px;
+    border-bottom-color: #2710d5;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    width: 50px;
+  }
+  .cell-first {
+    padding: 20px;
+    border-bottom-color: #ececec;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-top-color: #ececec;
+    border-top-width: 1px;
+    border-top-style: solid;
+    
+  }
+  .cell {
+    padding: 20px;
+    border-bottom-color: #ececec;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+  }
+  #company > iframe {
+    width: 100%;
+    height: 240px;
+    margin-top: 40px;
+  }
+  /* お問い合わせ部分 */
+  #contact {
+    margin: 80px 20px;
+  }
+  #contact > h3 {
+    margin-bottom:20px;
+  }
+  /* 問いと答えセットの部分。PCではflexにして問と答えが横並びになるようにしたけど
+  　スマホの場合はflexにせず、問いと答えが縦並びになるようにする */
+  #contact > form > div {
+    margin-bottom: 20px;
+  }
+  /* 問い部分 答えとの間に余白をつくる*/
+  .contact-heading {
+    margin-bottom: 20px;
+  }
+  /* 問いの項目名の設定 pC表示と同じ */
+.contact-label {
+  font-weight: bold;
+}
+/* 「必須」の文字 PC表示と同じ*/
+.contact-span {
+  color: #ce2222;
+  margin-left: 20px;
+  font-weight: bold;
+
+}
+/* 1行インプット部分（テキストボックス）の設定 下の枠線のみ表示　PC表示と同じだが、入力欄の大きさだけ変えてる*/
+.contact-textbox {
+  height: 56px;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom-width: 1px;
+  border-bottom-color: #707070;
+  border-bottom-style: solid;
+  background-color: #fafafa;
+  min-width: 300px;
+  width: 100%;
+}
+/* 複数行入力できるテキストエリアの設定 PC表示と変えている*/
+.contact-textarea {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  background-color: #fafafa;
+  width: 100%;
+  height: 150px;
+}
+
+/* ラジオボタン　スマホ表示 */
+.radiobutton {
+  margin-bottom: 20px;
+}
+
+/* ラジオボタンに隣接するlabel要素に対して,
+CSSで「お電話」「メール」「どちらでも」それぞれに改行を設定する→　「＋　label」を使う 　改行は下記の指定でできる*/
+.radiobutton + label::after {
+  content: "\A";
+  white-space: pre;
+}
+/* フッター*/
+footer {
+  background-color: #0d0d0d;
+  padding: 30px 20px 50px 20px;
+}
+
+#footer-logo {
+  margin-bottom: 30px;
+}
+/* 以下、リンク部分の装飾はPC表示と同じ。marginは最適化するため、PCとちょっと変えてる部分も 
+ でも縦並びにするため「block」を指定。*/
+#footer-link {
+  margin-bottom: 50px;
+}
+#footer-link > a {
+  text-decoration: none;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  display: block;
+  background-image: url("images/arrow.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+#footer-link > a:link {
+  color: #ffffff;
+}
+#footer-link > a:visited {
+  color: #ffffff;
+}
+
+#footer-link > a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+#footer-link > a:active {
+  color: #ffffff
+}
+
+/* SNSリンクとCopyrightを縦並びにするため、display:block　を指定 
+ copyrightもスマホに最適化したフォントサイズにする*/
+#sns-footer{
+  display: block;
+  width: 100%;
+}
+
+#sns-footer > a {
+  margin-right: 30px;
+}
+
+#copyright {
+  font-size: 12px;
+  display: block;
+  margin-top: 30px;
+  color: #ffffff;
+  
+}
+/* mission.html用のスタイル（スマホ） */
+/* ミッションのメインビジュアル　スマホ用に幅と高さを最適化 */
+#mission-main {
+  height: 256px;
+  width: 100%;
+  background-image: url("images/mission/mission-main.png");
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-size: auto 208px;
+}
+#mission-title {
+  background-color: #2710d5;
+  width: 136px;
+  color: #ffffff;
+  height: 256px;
+  border-radius: 0 248px 248px 0 ;
+  position: relative;
+}
+#mission-title > h1 {
+  position:absolute;
+  /* font-sizeと位置をスマホように最適化 */
+  top: 0;
+  left: 20px;
+  font-size: 40px;
+}
+#mission-title > span {
+  position: absolute;
+  top: 110px;
+  left: 20px;
+  font-size: 18px;
+}
+#mission-title > div {
+  position: absolute;
+  top: 180px;
+  left: 20px;
+  font-size: 13px;
+}
+/* mission　のs2dgs部分のスマホ表示（フォントサイズの最適化など） */
+#mission-s2dgs {
+   margin: 20px;
+}
+
+.mission-h2 {
+  color:#2710d5;
+  font-size: 38px;
+}
+.mission-h2::after {
+  content: none;
+}
+/* sdgs部分の画像を、スマホ画面幅いっぱいに表示する */
+#mission-s2dgs > img {
+  width: 100%;
+}
+/* 5GOAL 部分のスマホ表示 　displayのflexをやめて、縦に表示する*/
+#mission-5goals {
+  margin: 20px;
+}
+
+#mission-5goals > div > div {
+  margin-bottom: 40px;
+}
+
+/* PCでは画面左側に表示していた画像（四角に５Goalsとあるもの）を、スマホ幅いっぱいに表示する */
+#s2dgs-image {
+ width: 100%;
+}
+/* PCでは、画面右側に表示していた画像＋ナンバー＋タイトル＋説明を縦並びにする */
+.fivegoals-image-right {
+  margin: 20px auto;
+  display: block;
+}
+.fivegoals-image-left {
+  margin: 20px auto;
+  display: block;
+}
+.fivegoals-number {
+  color:#2710d5;
+  font-size: 48px;
+  margin: 0;
+}
+.fivegoals-h3 {
+  font-size: 28px;
+  margin: 0;
+}
+.fivegoals-p {
+  margin: 0;
+}
+
+/* プロダクトページのスマホ表示対応 */
+#product-main {
+  height: 256px;
+  width: 100%;
+  background-image: url("images/product/product-main.png");
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-size: auto 208px;
+}
+#product-title {
+  background-color: #2710d5;
+  width: 136px;
+  color: #ffffff;
+  height: 256px;
+  border-radius: 0 248px 248px 0 ;
+  position: relative;
+}
+#product-title > h1 {
+  position:absolute;
+  /* font-sizeと位置をスマホように最適化 */
+  top: 0;
+  left: 20px;
+  font-size: 40px;
+}
+#product-title > span {
+  position: absolute;
+  top: 110px;
+  left: 20px;
+  font-size: 18px;
+}
+#product-title > div {
+  position: absolute;
+  top: 180px;
+  left: 20px;
+  font-size: 13px;
+}
+
+/* 画像の次に説明　という順番でたてならびにする。画像が右にあるセクションではFLEXBOXとORDERを使用して
+　画像を先に表示させるようにする */
+.product-section1 {
+  margin: 20px;
+  
+}
+.product-section1 > img {
+  width: 100%;
+  border-radius: 0 300px 0 0 ;
+}
+
+
+.product-section2 {
+  display:flex;
+  flex-direction: column;
+  margin: 20px;
+  
+}
+.product-section2 > img {
+  order: 1;
+  width: 100%;
+  border-radius: 300px 0 0 0;
+}
+.product-section2 > div{
+  order: 2;
+}
+
+.product-h2 {
+  color: #2710d5;
+  font-size: 24px;
+  margin: 0;
+}
+.product-h3 {
+  font-size: 28px;
+  margin: 0;
+}
+
+
+
+}
